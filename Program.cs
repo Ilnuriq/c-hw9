@@ -1,4 +1,5 @@
-﻿//Задача 64.
+﻿/*
+//Задача 64.
 int n = InputNumbers("Введите n: ");
 int count = 2;
 PrintNumber(n, count);
@@ -9,6 +10,38 @@ void PrintNumber(int n, int count)
   if (count > n) return;
   PrintNumber(n, count + 1);
   Console.Write(count + ", ");
+}
+
+int InputNumbers(string input) 
+{
+  Console.Write(input);
+  int output = Convert.ToInt32(Console.ReadLine());
+  return output;
+}
+*/
+
+//Задача 66.
+int m = InputNumbers("Введите m: ");
+int n = InputNumbers("Введите n: ");
+int temp = m;
+
+if (m > n) 
+{
+  m = n; 
+  n = temp;
+}
+
+PrintSumm(m, n, temp=0);
+
+void PrintSumm(int m, int n, int summ)
+{
+  summ = summ + n;
+  if (n <= m)
+  {
+    Console.Write($"Сумма элементов= {summ} ");
+    return;
+  }
+  PrintSumm(m, n - 1, summ);
 }
 
 int InputNumbers(string input) 
